@@ -1,34 +1,28 @@
 .wrapper {
   background-color: bisque;
-  max-width: 90%;
+  width: 90%;
   margin: auto;
-
 }
 
 .card-box {
   display: flex;
- 
-}
-
-  @media screen and (max-width: 900px) {
-    .card-box {
-      flex-wrap: wrap;
-    }
+  flex-wrap: wrap;
 }
 
 .box {
   background-color: #333;
   color: #fff;
   padding: 1rem;
-  width: 500px;
+  width: 400px;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+  
   &:not(:last-child){
     margin-right: 1rem;
   }
-}
-
-.box-1, .box-2{
-  flex-grow: 1;
 }
 
 p {

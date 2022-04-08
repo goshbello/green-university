@@ -2,17 +2,17 @@
 
 <div class="wrapper">
   <div class="card-box">
-    <div class="box-1 box">
-      <h3>CS111: Intro to Computer Science</h3>
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-      <button class="btn btn-success">Enroll</button>
-      <button class="btn btn-info">info</button>
+  <% @courses.each do |course| %>
+    <div class="box">
+      <div>
+        <h3><%= course.code %>: <%= course.title%></h3>
+        <p><%= course.description %></p>
+      </div>
+      <div>
+        <hr>
+        <button class="btn btn-success">Enroll</button>
+        <button class="btn btn-info">info</button>
+      </div>
     </div>
-    <div class="box-2 box">
-      <h3>CS111: Intro to System Coding</h3>
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-      <button class="btn btn-success">Enroll</button>
-      <button class="btn btn-info">info</button>
-    </div>
-  </div>
+  <% end %>
 </div>
