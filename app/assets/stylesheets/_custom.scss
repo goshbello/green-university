@@ -1,0 +1,46 @@
+// sitcky footer styling
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #eee;
+
+}
+
+.Site-content {
+  flex: 1;
+}
+
+
+.nav-custom {
+  background-color: coral;
+  color: #fff !important;
+  margin-bottom: 3rem;
+}
+
+.nav-a-logo-custom {
+  color: #fff !important;
+  font-weight: bold;
+
+  &:hover {
+    color: #222 !important ;
+  }
+}
+
+.nav-a-custom {
+  color: #fff !important;
+
+  &:hover {
+    color: #222 !important ;
+  }
+}
+
+.custom-button {
+  color: #fff;
+  border: 2px solid #fff;
+
+  &:hover {
+    background-color: #fff;
+    color: #222;
+  }
+}

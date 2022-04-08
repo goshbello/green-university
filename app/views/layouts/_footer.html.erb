@@ -1,0 +1,27 @@
+<footer class="footer">
+<div class="footer_info container">
+  <div>
+    <h3>Green University</h3>
+    <p>The future of development training</p>
+  </div>
+  <div class="footer_contact">
+    <h3>Information</h3>
+    <ul class="ul">
+       <li>
+          <%= link_to 'About', about_path, class: "nav-a-custom" %>
+
+        </li>
+        <li>
+          <%= link_to 'Courses', courses_new_path, class: "nav-a-custom" %>
+        </li>
+        <li>
+          <a href="#">Contact us</a>
+        </li>
+      </ul>
+      </div>
+  </div>
+</div>
+</footer>
+<div class="text-center custom-footer">
+  <samll class="container">&copy; 2022 <%= link_to "Green University", "https://green-university.herokuapp.com/", class: "footer_link" %></samll>
+</div>
