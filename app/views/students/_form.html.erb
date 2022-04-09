@@ -1,0 +1,19 @@
+<h1><%= @student.new_record? ? "Enroll new student" : "Submit Changes" %></h1>
+<%= render 'shared/error-messages', obj: @student %>
+
+<%= form_for @student do |form| %>
+  <div class="mb-3">
+      <%= form.label :name, class:"form-label", for:"name"%>
+      <%= form.text_field :name, class: "form-control", id:"name" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :email, class:"form-label", for:"email" %>
+    <%= form.email_field :email, class:"form-control", id:"email" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :password, for:"password", class: "form-label" %>
+      
+    <%= form.password_field :password, id: "password", class: "form-control" %>
+  </div>
+  <%= form.submit(@student.new_record? ? "Enroll" : "Submit Changes", class:"custom-btn") %>
+<% end %>

@@ -1,0 +1,13 @@
+
+<div class="wrapper">
+  <div class="card-box">
+    <div class="box">
+      <div>
+        <h3><%= @student.name %></h3>
+        <hr>
+        <h6>Email: <%= @student.email %></h6>
+        <h6>Course(s): None</h6>
+      </div>
+    </div>
+</div>
+  <%= link_to 'Edit your profile', edit_student_path(@student), class: "custom-btn" %>

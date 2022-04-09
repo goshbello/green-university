@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
-  root to: 'courses#index'
+  root to: 'courses#index' # homepage
   
-  get 'courses/new', to: 'courses#new'
-  get '/about', to: 'pages#about'
+  get 'courses/new', to: 'courses#new'  #create new course
+  get '/about', to: 'pages#about'  #pages about page
+
+  resources :students, except: [:destroy]
   
   
   

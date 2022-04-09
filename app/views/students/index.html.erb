@@ -1,0 +1,19 @@
+<h1 class="text-center mb-5">Students Directory</h1>
+
+<div class="wrapper">
+  <div class="card-box">
+  <% @students.each do |student| %>
+    <div class="box">
+      <div>
+        <h3><%= student.name %></h3>
+        <hr>
+        <h6>Email: <%= student.email %></h6>
+        <h6>Course(s): None</h6>
+      </div>
+      <div>
+        <hr>
+        <button class="btn btn-success">View Profile</button>
+      </div>
+    </div>
+  <% end %>
+</div>

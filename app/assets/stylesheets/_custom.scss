@@ -13,7 +13,7 @@
 
 
 .nav-custom {
-  background-color: coral;
+  background-color: #198754;
   color: #fff !important;
   margin-bottom: 3rem;
 }
@@ -43,4 +43,23 @@
     background-color: #fff;
     color: #222;
   }
+}
+
+.custom-btn {
+  text-transform: uppercase;
+  border: 2px solid #198754;
+  background-color: #198754;
+  padding: 13px 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+
+  &:hover {
+    background-color: #ffff;
+    color: #198754;
+  }
+
+  
 }
