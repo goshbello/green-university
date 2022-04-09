@@ -4,16 +4,20 @@
 <%= form_for @student do |form| %>
   <div class="mb-3">
       <%= form.label :name, class:"form-label", for:"name"%>
-      <%= form.text_field :name, class: "form-control", id:"name" %>
+      <%= form.text_field :name, class: "form-control", id:"name", placeholder: "enter your full name" %>
   </div>
   <div class="mb-3">
     <%= form.label :email, class:"form-label", for:"email" %>
-    <%= form.email_field :email, class:"form-control", id:"email" %>
+    <%= form.email_field :email, class:"form-control", id:"email", placeholder: "enter your email address" %>
   </div>
   <div class="mb-3">
     <%= form.label :password, for:"password", class: "form-label" %>
-      
-    <%= form.password_field :password, id: "password", class: "form-control" %>
+    <%= form.password_field :password, id: "password", class: "form-control", placeholder: "choose a password" %>
   </div>
+  <div class="mb-3">
+    <%= form.label :password_confirmation, for:"password", class: "form-label" %>
+    <%= form.password_field :password_confirmation, id: "password", class: "form-control", placeholder: "confirm your password" %>
+  </div>
+
   <%= form.submit(@student.new_record? ? "Enroll" : "Submit Changes", class:"custom-btn") %>
 <% end %>

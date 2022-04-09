@@ -3,7 +3,7 @@
 }
 
 .footer {
-  background-color: #222;
+  background-color: #666;
   padding: 1rem;
   color: #fff;
 
@@ -52,11 +52,13 @@
  
 }
 .custom-footer, .footer_link {
-  background-color: rgba(25, 135, 84, 0.5);
+  background-color: #222;
   color: #fff;
   text-decoration: none !important;
+}
 
+.footer_link {
   &:hover {
-    color: #222;
+    color: #fff;
   }
 }
