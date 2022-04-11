@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'  #pages about page
 
   resources :students, except: [:destroy]
-  
+
+  # sessions routes
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
   
   
   

@@ -34,6 +34,21 @@
     color: #222 !important ;
   }
 }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.added-style {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 12px 16px;
+
+  &:hover {
+    background-color: #fff;
+  }
+}
 
 .custom-button {
   color: #fff;
@@ -60,6 +75,15 @@
     background-color: #ffff;
     color: #198754;
   }
-
   
+}
+
+.sign-up-login-custom {
+  display: inline-flex;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
 }

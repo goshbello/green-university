@@ -10,4 +10,6 @@
       </div>
     </div>
 </div>
+<% if current_user == @student %>
   <%= link_to 'Edit your profile', edit_student_path(@student), class: "custom-btn" %>
+<% end %>
