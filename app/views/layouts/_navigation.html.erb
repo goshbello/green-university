@@ -7,7 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to 'Courses', courses_new_path, class: "nav-link nav-a-custom" %>
+          <%= link_to 'About Us', about_path, class: "nav-link nav-a-custom" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Courses', courses_path, class: "nav-link nav-a-custom" %>
         </li>
         <% if logged_in? %>
           <li class="nav-item">
@@ -31,7 +34,7 @@
           <li><%= link_to 'Logout', logout_path, method: :delete, class: " nav-link nav-a-custom added-style" %></li>
           <% else %>
             <li><%= link_to 'Login', login_path, class: " nav-link nav-a-custom added-style" %></li>
-            <li><%= link_to 'Enroll', new_student_path, class: " nav-link nav-a-custom added-style" %></li>
+            <li><%= link_to 'Sign up', new_student_path, class: " nav-link nav-a-custom added-style" %></li>
         <% end %>
       </ul>
     </div>

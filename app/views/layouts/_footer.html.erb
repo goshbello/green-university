@@ -7,16 +7,18 @@
   <div class="footer_contact">
     <h3>Information</h3>
     <ul class="ul">
-       <li>
-          <%= link_to 'About', about_path, class: "nav-a-custom" %>
-
-        </li>
-        <li>
-          <%= link_to 'Courses', courses_new_path, class: "nav-a-custom" %>
-        </li>
-        <li>
-          <a href="#">Contact us</a>
-        </li>
+      <li>
+        <%= link_to 'Home', root_path, class: "nav-a-custom" %>
+      </li>
+      <li>
+        <%= link_to 'About', about_path, class: "nav-a-custom" %>
+      </li>
+      <li>
+        <%= link_to 'Courses', courses_path, class: "nav-link nav-a-custom" %>
+      </li>
+      <li>
+        <a href="#">Contact us</a>
+      </li>
       </ul>
       </div>
   </div>

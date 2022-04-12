@@ -10,8 +10,10 @@
       </div>
       <div>
         <hr>
-        <button class="btn btn-success">Enroll</button>
-        <button class="btn btn-info">info</button>
+        <% if logged_in? && !(current_user.courses.include?(course)) %> <% 'COMMENT: check if user logged in and user not already enrolled on the course' %>
+          <%= link_to 'Enroll in this course', course_enroll_path(course_id: course.id), method: :post, class:"btn btn-success" %>
+        <% end %>
+        <%= link_to 'Read More', course_path(course), class:"btn btn-info" %>
       </div>
     </div>
   <% end %>

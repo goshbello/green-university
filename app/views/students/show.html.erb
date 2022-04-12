@@ -6,7 +6,16 @@
         <h3><%= @student.name %></h3>
         <hr>
         <h6>Email: <%= @student.email %></h6>
-        <h6>Course(s): None</h6>
+        <h6>Student Course(s):</h6><p> <% if @student.courses.empty? %>
+          None
+          <% else %>
+          <ul>
+            <% @student.courses.each do |course| %>
+              <li><%= course.title %></li>
+            <% end %>
+          </ul>
+          <% end %>
+         </p>
       </div>
     </div>
 </div>
