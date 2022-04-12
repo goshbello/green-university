@@ -17,15 +17,16 @@
             <%= link_to 'Students', students_path, class: "nav-link nav-a-custom" %>
           </li>
         <% end %>
+          <% if logged_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle nav-a-custom" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
+            <%= current_user.name %>
           </a>
           <ul class="dropdown-menu nav-a-custom" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+            <%= link_to 'View Profile', student_path(current_user), class:"dropdown-item" %>
+            <li><a class="dropdown-item" href="#">View courses</a></li>
+          <% end %>
           </ul>
         </li>
       </ul>

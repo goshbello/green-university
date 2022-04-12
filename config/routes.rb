@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root to: 'pages#index' # homepage
   get '/about', to: 'pages#about'  #pages about page
+  get '/contact-us', to: 'pages#contact'  # contact us page
  
   resources :courses, only: [:new, :show, :index] # courses routes
   resources :students, except: [:destroy]         # students routes
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
   # student enroll on a course
   post 'course_enroll', to: 'student_courses#create'
+
+  # 
   
   
   
