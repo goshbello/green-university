@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
       UserMailer.welcome_email(@student).deliver
       # StudentNotificationMailer.with(student: @student).welcome_email.deliver_later
       # flash[:notice] = "Welcome to Green University #{@student.name}. You have successfully enrolled"
-      flash[:notice] = "Welcome to Green University #{@student.name}. Please check your email for confirmation instructions."
+      flash[:notice] = "Welcome to Green University #{@student.name}."
       redirect_to root_path
     else
       render :new
