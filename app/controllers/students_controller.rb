@@ -30,7 +30,10 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      flash[:notice] = "Welcome to Green University #{@student.name}. You have successfully enrolled"
+      UserMailer.welcome_email(@student).deliver
+      # StudentNotificationMailer.with(student: @student).welcome_email.deliver_later
+      # flash[:notice] = "Welcome to Green University #{@student.name}. You have successfully enrolled"
+      flash[:notice] = "Welcome to Green University #{@student.name}. Please check your email for confirmation instructions."
       redirect_to root_path
     else
       render :new

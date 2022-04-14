@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   # student enroll on a course
   post 'course_enroll', to: 'student_courses#create'
 
-  # 
+  # email confirmation routes
+  resources :confirmations, only: [:create, :edit, :new], param: :confirmation_token
   
   
   

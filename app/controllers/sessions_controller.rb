@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     student = Student.find_by(email: params[:sessions][:email].downcase)
-    if student && student.authenticate(params[:sessions][:password]) # check if student then authenticate student's password
+    if student.present? && student.authenticate(params[:sessions][:password]) # check if student then authenticate student's password
       session[:student_id] = student.id  # We store user id to the session vaiable we use this to keep user l
       flash[:notice] = "You have successfully logged in"
       redirect_to student
