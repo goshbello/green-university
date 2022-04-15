@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       if student.email_confirmed
         session[:student_id] = student.id  # We store user id to the session vaiable we use this to keep user l
         flash[:notice] = "You have successfully logged in"
-        redirect_to student
+        redirect_to root_path
         else
             flash.now[:error] = 'Please activate your account by following the instructions in the account confirmation email you received to proceed'
             render 'new'
