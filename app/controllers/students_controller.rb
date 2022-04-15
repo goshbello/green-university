@@ -30,13 +30,28 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      UserMailer.welcome_email(@student).deliver
-      # StudentNotificationMailer.with(student: @student).welcome_email.deliver_later
-      # flash[:notice] = "Welcome to Green University #{@student.name}. You have successfully enrolled"
-      flash[:notice] = "Welcome to Green University #{@student.name}."
-      redirect_to root_path
+      StudentMailer.student_email_confirmation(@student).deliver
+        flash[:success] = "Please confirm your email address to continue"
+        redirect_to login_path
+        # this is for welcome message
+      #StudentMailer.student_welcome(@student).deliver
+      #flash[:notice] = "Welcome to Green University #{@student.name}."
+      #redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def email_confirm
+    student = Student.find_by_confirm_token(params[:id])
+    if student
+      student.email_activate
+      flash[:success] = "Welcome to the Sample App! Your email has been confirmed.
+      Please sign in to continue."
+      redirect_to login
+    else
+      flash[:error] = "Sorry. User does not exist"
+      redirect_to root_path
     end
   end
 
@@ -56,4 +71,5 @@ class StudentsController < ApplicationController
       redirect_to student_path(current_user)
     end
   end
+
 end

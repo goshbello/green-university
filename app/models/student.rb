@@ -1,5 +1,7 @@
 class Student < ApplicationRecord
 
+  before_create :confirmation_token
+
   before_save {self.email = email.downcase} # convert downcase email letters before saving into DB
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 5, maximum: 30}
@@ -23,26 +25,19 @@ class Student < ApplicationRecord
   has_many :courses, through: :student_courses
 
 
-  # Email confirmation methods
-  def confirm!
-    update_columns(confirmed_at: Time.current)
+
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
   end
 
-  def confirmed?
-    confirmed_at.present?
-  end
+  private
 
-  def generate_confirmation_token
-    signed_id expires_in: CONFIRMATION_TOKEN_EXPIRATION, purpose: :confirm_email
-  end
-
-  def unconfirmed?
-    !confirmed?
-  end
-
-  def send_confirmation_email!
-    confirmation_token = generate_confirmation_token
-    StudentNotificationMailer.confirmation(self, confirmation_token).deliver_now
+  def confirmation_token
+    if self.confirm_token.blank?
+        self.confirm_token = SecureRandom.urlsafe_base64.to_s
+    end
   end
 
 end

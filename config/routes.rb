@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   get '/contact-us', to: 'pages#contact'  # contact us page
  
   resources :courses, only: [:new, :show, :index] # courses routes
-  resources :students, except: [:destroy]         # students routes
+  
+  # here we nested get :email_confirm route into students becuase this action heppen when we create a new student. So email_confirm is now a memeber of student resources
+  resources :students, except: [:destroy] do  # students routes
+    member do
+      get :email_confirm
+    end
+  end
+    
 
   # sessions routes
   get 'login', to: 'sessions#new'
